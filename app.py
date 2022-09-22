@@ -18,26 +18,29 @@ def index():
 def bot():
     data = request.get_json()
     print(data)
-    # if 'quote' in data['queryResult']['queryText']:
-    #    today_quote = utils.get_quote()
-    #    response = {
-    #        "fulfillmentText": today_quote
-   #     }
-    #if 'image' in data['queryResult']['queryText']:
-    link = 'https://sample-videos.com/img/Sample-jpg-image-100kb.jpg'
+    if 'quote' in data['queryResult']['queryText']:
+        today_quote = utils.get_quote()
+        response = {
+            "fulfillmentText": today_quote
+        }
+        return jsonify(response)
 
-    response = {
-        "fulfillmentMessages":
-            {
-                "payload": {
-                    'mediaUrl': link,
-                    'text': "Testing images"
+    if 'musa' in data['queryResult']['queryText']:
+        link = 'https://sample-videos.com/img/Sample-jpg-image-100kb.jpg'
+
+        response = {
+            "fulfillmentMessages": [
+                {
+                    "payload": {
+                        "mediaUrl": link,
+                        "text": "Example logo"
+        
+        #// custom integration payload here 
+                    }
                 }
-            }
-
-    }
-
-    return jsonify(response)
+            ]
+           }
+        return jsonify(response)
 
 
 if __name__ == '__main__':

@@ -16,3 +16,4 @@ def get_quote():
         #print(values)
         
         return result
+
