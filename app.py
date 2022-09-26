@@ -3,7 +3,10 @@ from flask import Flask, request, jsonify
 from twilio.twiml.messaging_response import MessagingResponse
 import utils
 
+
+# app initialization
 app = Flask("__name__")
+
 
 
 @app.route('/')
@@ -11,10 +14,18 @@ def index():
 
     return "Hello World!!"
 
+# Function for building responses
+def results():
+    
+    pass
+
+
+# The Bot webhook for serving responses
 
 @app.route("/bot", methods=["POST"])
 def bot():
-    data = request.get_json()
+    data = request.get_json(force=True)
+    action = data.get('queryResult').get('action')
     print(data)
     if 'quote' in data['queryResult']['queryText']:
         today_quote = utils.get_quote()
