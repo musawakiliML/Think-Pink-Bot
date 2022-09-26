@@ -9,13 +9,14 @@ newsapi = NewsApiClient(api_key='bdab0a5542d548b089fd8ab63022cf55')
 
 
 def top_headlines():
-    top_headlines = newsapi.get_top_headlines(q='bitcoin',
-                                              category='business',
+    top_headlines = newsapi.get_top_headlines(q='breastcancer',
+                                              category='general',
                                               language='en',
                                               country='us')
     return top_headlines
 
 
+'''
 def get_quote():
     response = requests.get("https://zenquotes.io/api/today")
 
@@ -31,10 +32,10 @@ def get_quote():
         # print(values)
 
         return result
-
+'''
 
 top_headlines = top_headlines()
-print(type(top_headlines))
+print(top_headlines)
 
 
 def ngnews():
