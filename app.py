@@ -1,6 +1,4 @@
 # Chatbot implementation
-import re
-from urllib import response
 from flask import Flask, request, jsonify
 from twilio.twiml.messaging_response import MessagingResponse
 import utils
@@ -34,13 +32,28 @@ def bot():
                     "payload": {
                         "mediaUrl": link,
                         "text": "Example logo"
-        
-        #// custom integration payload here 
+
+                        # // custom integration payload here
                     }
                 }
             ]
-           }
+        }
         return jsonify(response)
+    if 'image' in data['queryResult']['queryText']:
+        link = "https://pbs.twimg.com/ext_tw_video_thumb/1450389344418734080/pu/img/zX1Acbm-qMbl1PfK.jpg"
+        
+        response = {
+            "fulfillmentMessages": [
+                {
+                    "payload": {
+                        "mediaUrl": link,
+                        "text": "Breast Cancer Awareness Month"
+
+                        # // custom integration payload here
+                    }
+                }
+            ]
+        }
 
 
 if __name__ == '__main__':
