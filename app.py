@@ -39,21 +39,39 @@ def bot():
             ]
         }
         return jsonify(response)
+
     if 'image' in data['queryResult']['queryText']:
         link = "https://pbs.twimg.com/ext_tw_video_thumb/1450389344418734080/pu/img/zX1Acbm-qMbl1PfK.jpg"
-        
+
         response = {
             "fulfillmentMessages": [
+                {
+                    'text':{
+                        'text':["Hello I am a chatbot", "Helllo i am breast cancer chatbot"]
+                    }
+                },
+                {
+                    'text':{
+                        'text':["I will diagnose you and share tips with you"]
+                    }
+                },
                 {
                     "payload": {
                         "mediaUrl": link,
                         "text": "Breast Cancer Awareness Month"
-
+                        # // custom integration payload here
+                    }
+                },
+                {
+                    "payload": {
+                        "mediaUrl": link,
+                        "text": "Breast Cancer Awareness Month"
                         # // custom integration payload here
                     }
                 }
             ]
         }
+        return jsonify(response)
 
 
 if __name__ == '__main__':
