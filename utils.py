@@ -37,7 +37,7 @@ def get_quote():
 top_headlines = top_headlines()
 print(top_headlines)
 
-
+'''
 def ngnews():
     newsapi = NewsApiClient(api_key='bdab0a5542d548b089fd8ab63022cf55')
     top_headlines = newsapi.get_top_headlines(q='coronavirus',
@@ -61,3 +61,4 @@ def ngnews():
     finalnews = head_news + head_newsurl
 
     return finalnews
+'''

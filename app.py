@@ -75,7 +75,7 @@ def bot():
                 },
                 {
                     "payload": {
-                        "mediaUrl": link,
+                        "mediaUrl": 'https://youtu.be/rEV_bc32HaY',
                         "text": "Breast Cancer Awareness Month"
                         # // custom integration payload here
                     }
