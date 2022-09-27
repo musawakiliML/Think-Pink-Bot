@@ -7,8 +7,6 @@ import utils
 # app initialization
 app = Flask("__name__")
 
-
-
 @app.route('/')
 def index():
 
@@ -16,6 +14,9 @@ def index():
 
 # Function for building responses
 def results():
+    data = request.get_json(force=True)
+    action = data.get('queryResult').get('action')
+    
     
     pass
 
@@ -67,6 +68,11 @@ def bot():
                     }
                 },
                 {
+                    'text':{
+                        'text':['https://youtu.be/rEV_bc32HaY']
+                    }
+                },
+                {
                     "payload": {
                         "mediaUrl": link,
                         "text": "Breast Cancer Awareness Month"
@@ -75,7 +81,14 @@ def bot():
                 },
                 {
                     "payload": {
-                        "mediaUrl": 'https://youtu.be/rEV_bc32HaY',
+                        "mediaUrl": 'https://dandelion-robin-1277.twil.io/assets/WhatsApp%20Image%202022-09-22%20at%207.17.40%20PM.jpeg',
+                        "text": "Breast Cancer Awareness Month"
+                        # // custom integration payload here
+                    }
+                },
+                {
+                    "payload": {
+                        "mediaUrl": 'https://dandelion-robin-1277.twil.io/assets/Beyond%20The%20Shock%20-%20Chapter%204%20-%20Diagnosis%20-%20Diagnostic%20Method.mp4',
                         "text": "Breast Cancer Awareness Month"
                         # // custom integration payload here
                     }
@@ -83,6 +96,26 @@ def bot():
             ]
         }
         return jsonify(response)
+    if action == 'contact_us':
+        response = {
+            "fulfillmentMessages": [
+                {
+                    'text':{
+                        'text':["We are Think Pink"]
+                    }
+                },
+                {
+                    "payload": {
+                        "mediaUrl": 'https://dandelion-robin-1277.twil.io/assets/WhatsApp%20Image%202022-09-22%20at%207.17.40%20PM.jpeg',
+                        "text": "Breast Cancer Awareness Month"
+                        # // custom integration payload here
+                    }
+                }
+            ]
+        }
+        return jsonify(response)
+        
+        
 
 
 if __name__ == '__main__':

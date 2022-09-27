@@ -9,12 +9,14 @@ newsapi = NewsApiClient(api_key='bdab0a5542d548b089fd8ab63022cf55')
 
 
 def top_headlines():
-    top_headlines = newsapi.get_top_headlines(q='breastcancer',
+    top_headlines = newsapi.get_top_headlines(q='breast cancer',
                                               category='general',
                                               language='en',
                                               country='us')
     return top_headlines
 
+top_headlines = top_headlines()
+print(top_headlines)
 
 '''
 def get_quote():
@@ -33,9 +35,6 @@ def get_quote():
 
         return result
 '''
-
-top_headlines = top_headlines()
-print(top_headlines)
 
 '''
 def ngnews():
