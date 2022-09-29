@@ -15,9 +15,8 @@ def search_google(user_message):
         results.append(i)
     return results
 
+#query = input("Enter a search query:")
 
-query = input("Enter a search query:")
+#results = search_google(query)
 
-results = search_google(query)
-
-print(results)
+#print(results)

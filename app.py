@@ -22,7 +22,6 @@ def results():
 
 
 # The Bot webhook for serving responses
-
 @app.route("/bot", methods=["POST"])
 def bot():
     data = request.get_json(force=True)
