@@ -21,11 +21,11 @@ def about_us():
                 },
                 {
                     "payload": {
-                        "mediaUrl":"#",
+                        "mediaUrl":"https://dandelion-robin-1277.twil.io/assets/logo.jpeg",
                         "text": "We are Think Pink Breast Cancer Awareness"
-
                         # // custom integration payload here
                     }
                 }
             ]
         }
+    return response_message
