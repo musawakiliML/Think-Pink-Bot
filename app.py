@@ -2,11 +2,12 @@
 from flask import Flask, request, jsonify
 from twilio.twiml.messaging_response import MessagingResponse
 import utils
-from response import about_us, welcome
+from response import about_us, breast_cancer, welcome
 
 
 # app initialization
 app = Flask("__name__")
+
 
 @app.route('/')
 def index():
@@ -16,20 +17,28 @@ def index():
 # Function for building responses
 
 # The Bot webhook for serving responses
+
+
 @app.route("/bot", methods=["POST"])
 def bot():
     data = request.get_json(force=True)
     action = data.get('queryResult').get('action')
-    
+
     if "about_us" == action:
         response = about_us()
-        
+
         return jsonify(response)
     if "input.welcome" == action:
         response = welcome()
-        
+
         return jsonify(response)
-    #if 'quote' in data['queryResult']['queryText']:
+
+    if "what.breast_cancer" == action:
+        response = breast_cancer()
+
+        return jsonify(response)
+
+    # if 'quote' in data['queryResult']['queryText']:
         #today_quote = utils.get_quote()
       #  response = {
       #      "fulfillmentText": today_quote
@@ -59,18 +68,18 @@ def bot():
         response = {
             "fulfillmentMessages": [
                 {
-                    'text':{
-                        'text':["Hello I am a chatbot", "Helllo i am breast cancer chatbot"]
+                    'text': {
+                        'text': ["Hello I am a chatbot", "Helllo i am breast cancer chatbot"]
                     }
                 },
                 {
-                    'text':{
-                        'text':["I will diagnose you and share tips with you"]
+                    'text': {
+                        'text': ["I will diagnose you and share tips with you"]
                     }
                 },
                 {
-                    'text':{
-                        'text':['https://youtu.be/rEV_bc32HaY']
+                    'text': {
+                        'text': ['https://youtu.be/rEV_bc32HaY']
                     }
                 },
                 {
@@ -101,8 +110,8 @@ def bot():
         response = {
             "fulfillmentMessages": [
                 {
-                    'text':{
-                        'text':["We are Think Pink"]
+                    'text': {
+                        'text': ["We are Think Pink"]
                     }
                 },
                 {
@@ -115,8 +124,6 @@ def bot():
             ]
         }
         return jsonify(response)
-        
-        
 
 
 if __name__ == '__main__':
