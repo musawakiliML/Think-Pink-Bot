@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 from twilio.twiml.messaging_response import MessagingResponse
 import utils
+import response
 
 
 # app initialization
@@ -13,26 +14,23 @@ def index():
     return "Hello World!!"
 
 # Function for building responses
-def results():
-    data = request.get_json(force=True)
-    action = data.get('queryResult').get('action')
-    
-    
-    pass
-
 
 # The Bot webhook for serving responses
 @app.route("/bot", methods=["POST"])
 def bot():
     data = request.get_json(force=True)
     action = data.get('queryResult').get('action')
-    print(data)
-    if 'quote' in data['queryResult']['queryText']:
-        today_quote = utils.get_quote()
-        response = {
-            "fulfillmentText": today_quote
-        }
+    
+    if "about_us" == action:
+        response = response.about_us()
+        
         return jsonify(response)
+    #if 'quote' in data['queryResult']['queryText']:
+        #today_quote = utils.get_quote()
+      #  response = {
+      #      "fulfillmentText": today_quote
+      #  }
+      #  return jsonify(response)
 
     if 'musa' in data['queryResult']['queryText']:
         link = 'https://sample-videos.com/img/Sample-jpg-image-100kb.jpg'
