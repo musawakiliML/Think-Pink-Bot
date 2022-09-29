@@ -22,6 +22,11 @@ def about_us():
                 }
             },
             {
+                'text': {
+                    'text': [f"{em(':handshake:',language='alias')} Let's Fight Breast Cancer Together!!"]
+                }
+            },
+            {
                 "payload": {
                     "mediaUrl": "https://dandelion-robin-1277.twil.io/assets/logo.jpeg",
                     "text": "We are Think Pink Breast Cancer Awareness"
@@ -45,19 +50,30 @@ def welcome():
             },
             {
                 'text': {
-                    'text': [f"{em(':robot:',language='alias')} I am Chatbot that can educate you on Breast Cancer.\nI will send you verified information with both video, links and pictures."]
+                    'text': [f"{em(':robot:',language='alias')} I am Chatbot that can educate you on Breast Cancer with verified information like video, links and pictures."]
                 }
             },
             {
                 'text': {
-                    'text': [f"You can Ask me things Like {em(':question:',language='alias')} \n 1. What is breast cancer? \n 2. "]
-                }
-            },
-            {
-                'text': {
-                    'text': [f"{em(':handshake:',language='alias')} Let's Fight Breast Cancer Together!!"]
+                    'text': [f"You Can Start Here: {em(':question:',language='alias')} \n 1. What is Breast Cancer? \n 2. What Causes Breast Cancer? \n 3. What are the symptoms of breast cancer? \n 4. Early Detection \n 5. Diagnosis \n 6. Stages \n 7. Types of Breast Cancer \n 8. Treatment \n 9. Breast Cancer Myths \n 10. FAQS(Frequently Asked Questions) \n 11. Breast Cancer Resources \n 12. Free Educational Guides \n 13. Search Google."]
                 }
             },
         ]
     }
     return response_message
+
+
+def causes():
+    # breast cancer causes
+    pass
+
+def symptoms():
+    # breast cancer symptoms
+    pass
+
+
+def resources():
+    # website links
+    # pdf and others
+    # resources of breast cancer
+    pass
