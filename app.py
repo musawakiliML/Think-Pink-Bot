@@ -2,7 +2,7 @@
 from flask import Flask, request, jsonify
 from twilio.twiml.messaging_response import MessagingResponse
 import utils
-import response
+from response import about_us
 
 
 # app initialization
@@ -22,7 +22,7 @@ def bot():
     action = data.get('queryResult').get('action')
     
     if "about_us" == action:
-        response = response.about_us()
+        response = about_us()
         
         return jsonify(response)
     #if 'quote' in data['queryResult']['queryText']:
