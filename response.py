@@ -40,12 +40,17 @@ def welcome():
         "fulfillmentMessages": [
             {
                 'text': {
-                    'text': [f"Hi! {em('waving_hand',language='alias')}  Good day", f"Hello! {em('waving_hand',language='alias')} Nice to meet you"]
+                    'text': [f"Hi! {em(':waving_hand:',language='alias')}  Good day", f"Hello! {em('waving_hand',language='alias')} Nice to meet you"]
                 }
             },
             {
                 'text': {
-                    'text': [f"{em(':robot:',language='alias')}I am Chatbot that can educate you on Breast Cancer.\nI will send you verified information with both video, links and pictures."]
+                    'text': [f"{em(':robot:',language='alias')} I am Chatbot that can educate you on Breast Cancer.\nI will send you verified information with both video, links and pictures."]
+                }
+            },
+            {
+                'text': {
+                    'text': [f"You can Ask me things Like {em(':question:',language='alias')} \n 1. What is breast cancer? \n 2. "]
                 }
             },
             {
@@ -53,11 +58,6 @@ def welcome():
                     'text': [f"{em(':handshake:',language='alias')} Let's Fight Breast Cancer Together!!"]
                 }
             },
-            {
-                'text': {
-                    'text': [f"You can Ask me things Like {em(':question:',language='alias')} \n 1. What is breast cancer? \n 2. "]
-                }
-            }
         ]
     }
     return response_message
