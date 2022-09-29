@@ -55,7 +55,7 @@ def welcome():
             },
             {
                 'text': {
-                    'text': [f"You Can Start Here: {em(':question:',language='alias')} \n 1. What is Breast Cancer? \n 2. What Causes Breast Cancer? \n 3. What are the symptoms of breast cancer? \n 4. Early Detection \n 5. Diagnosis \n 6. Stages \n 7. Types of Breast Cancer \n 8. Treatment \n 9. Breast Cancer Myths \n 10. FAQS(Frequently Asked Questions) \n 11. Breast Cancer Resources \n 12. Free Educational Guides \n 13. Search Google."]
+                    'text': [f"You Can Start Here: {em(':question:',language='alias')} \n 1. What is Breast Cancer? {em(':person_raising_hand:',language='alias')} \n 2. What Causes Breast Cancer? {em(':thinking_face:',language='alias')} \n 3. What are the symptoms of breast cancer? {em(':thinking_face:',language='alias')} \n 4. Early Detection {em(':medical_symbol:',language='alias')} \n 5. Diagnosis {em(':stethoscope:', language='alias')} \n 6. Stages {em(':twelve_o’clock:', language='alias')}\n 7. Types of Breast Cancer {em(':check_box_with_check:', language='alias')} \n 8. Treatment {em(':hospital:', language='alias')} \n 9. Breast Cancer Myths {em(':warning:', language='alias')} \n 10. FAQS (Frequently Asked Questions) {em(':bookmark_tabs:', language='alias')} \n 11. Breast Cancer Resources {em(':books:', language='alias')} \n 12. Free Educational Guides {em(':light_bulb:', language='alias')} \n 13. Search Google {em(':magnifying_glass_tilted_right:', language='alias')} \n\n {em(':keyboard:', language='alias')}Type any option to get a response..."]
                 }
             },
         ]
